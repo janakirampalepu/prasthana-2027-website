@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="noise flex min-h-screen flex-col">
+      <body className="noise flex min-h-dvh flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

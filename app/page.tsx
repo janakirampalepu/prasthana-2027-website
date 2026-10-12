@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative flex min-h-screen items-center px-6 sm:px-10 pt-28 pb-20">
+      <section className="relative flex min-h-dvh items-center px-6 sm:px-10 pt-28 pb-20">
         <Aurora />
         <div className="mx-auto w-full max-w-6xl">
           <Reveal>
