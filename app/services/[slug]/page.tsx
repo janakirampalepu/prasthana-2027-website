@@ -150,7 +150,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {others.map((o) => (
             <Link key={o.slug} href={`/services/${o.slug}`}>
-              <SpotlightCard className="flex items-center justify-between p-5">
+              <SpotlightCard className="p-5" innerClassName="flex items-center justify-between gap-3">
                 <span className="font-medium">{o.title}</span>
                 <ArrowRight className="size-4 text-accent" />
               </SpotlightCard>

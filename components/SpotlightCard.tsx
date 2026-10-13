@@ -2,7 +2,16 @@
 import { useRef, type ReactNode, type MouseEvent } from "react";
 
 // Card with a cursor-following spotlight border/glow.
-export function SpotlightCard({ children, className = "" }: { children: ReactNode; className?: string }) {
+export function SpotlightCard({
+  children,
+  className = "",
+  innerClassName = "",
+}: {
+  children: ReactNode;
+  className?: string;
+  // Layout classes (flex, grid, gap) for the content wrapper, which sits inside the card.
+  innerClassName?: string;
+}) {
   const ref = useRef<HTMLDivElement>(null);
 
   function onMove(e: MouseEvent) {
@@ -26,7 +35,7 @@ export function SpotlightCard({ children, className = "" }: { children: ReactNod
             "radial-gradient(420px circle at var(--x,50%) var(--y,50%), rgba(139,92,246,0.22), transparent 60%)",
         }}
       />
-      <div className="relative">{children}</div>
+      <div className={`relative ${innerClassName}`}>{children}</div>
     </div>
   );
 }

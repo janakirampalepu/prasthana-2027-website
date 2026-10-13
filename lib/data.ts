@@ -20,6 +20,7 @@ export const nav = [
   { href: "/case-studies", label: "Case Studies" },
   { href: "/engagement-models", label: "How We Work" },
   { href: "/team", label: "Team" },
+  { href: "/leadership", label: "Leadership" },
   { href: "/careers", label: "Careers" },
   { href: "/about", label: "About" },
 ];
@@ -314,48 +315,87 @@ export type Job = {
   title: string;
   team: string;
   location: string;
-  type: string;
-  experience: string;
+  type?: string;
+  experience?: string;
   about: string;
+  responsibilities: string[];
 };
 
-// SAMPLE content: replace with real openings.
+// Openings follow https://www.prasthana.com/careers/. Per-role location, type and experience are
+// not published there, so only what is stated is shown ("Experienced" where the source says so).
 export const jobs: Job[] = [
   {
-    slug: "senior-react-engineer",
-    title: "Senior React / Next.js Engineer",
+    slug: "ruby-on-rails-developer",
+    title: "Ruby On Rails Developer",
+    team: "Backend",
+    location: "Hyderabad",
+    about: "Build Ruby applications and collaborate on solid design and quality products.",
+    responsibilities: [
+      "Build Ruby applications, including back-end microservices, command-line utilities and data processing scripts",
+      "Coordinate with teams working on other infrastructure layers",
+      "Solve problems collaboratively and build quality products",
+    ],
+  },
+  {
+    slug: "front-end-developer",
+    title: "Front-End Developer",
     team: "Web",
     location: "Hyderabad",
-    type: "Full-time",
-    experience: "5+ years",
-    about: "Build modern web applications with React, TypeScript and a strong design-system mindset.",
+    about: "Build complete user interfaces and deliver a streamlined user experience with a young, passionate team.",
+    responsibilities: [
+      "Build complete user interfaces and connect software components",
+      "Deliver a streamlined user experience",
+      "Write a first-class codebase using best practices",
+    ],
   },
   {
-    slug: "mobile-engineer",
-    title: "Mobile Engineer (SwiftUI / Compose / Flutter)",
-    team: "Mobile",
+    slug: "dotnet-developer",
+    title: ".Net Developer",
+    team: "Backend",
     location: "Hyderabad",
-    type: "Full-time",
-    experience: "3+ years",
-    about: "Ship polished native and cross-platform apps used by real people every day.",
+    experience: "Experienced",
+    about: "Design, develop and deploy applications while collaborating with teams across the stack.",
+    responsibilities: [
+      "Design, develop, code, customize, configure, test and deploy applications",
+      "Coordinate with teams working on other infrastructure layers",
+      "Solve problems collaboratively and build quality products",
+    ],
   },
   {
-    slug: "qa-automation-engineer",
-    title: "QA Automation Engineer",
+    slug: "qa-engineer",
+    title: "QA Engineer",
     team: "Quality Engineering",
     location: "Hyderabad",
-    type: "Full-time",
-    experience: "3+ years",
-    about: "Own automation frameworks, CI quality gates and performance testing.",
+    about: "Help every release ship with quality. Flexible working, with a focus on timely, quality output.",
+    responsibilities: [
+      "Test products and help deliver quality releases on time",
+      "Work flexibly, with a focus on timely, quality output",
+    ],
   },
   {
-    slug: "data-ai-engineer",
-    title: "Data & AI Engineer",
-    team: "Data & AI",
+    slug: "ios-developer",
+    title: "iOS Developer",
+    team: "Mobile",
     location: "Hyderabad",
-    type: "Full-time",
-    experience: "4+ years",
-    about: "Build data pipelines, ML models and LLM-powered products.",
+    about: "Build iOS apps for our clients. Flexible working, with a focus on timely, quality output.",
+    responsibilities: [
+      "Build and ship iOS applications",
+      "Work flexibly, with a focus on timely, quality output",
+    ],
+  },
+  {
+    slug: "product-manager",
+    title: "Product Manager",
+    team: "Product Management",
+    location: "Hyderabad",
+    experience: "Experienced",
+    about: "Own products across their lifecycle, from requirements and vision to delivery.",
+    responsibilities: [
+      "Plan and execute products across their lifecycle",
+      "Gather and prioritise requirements and define the product vision",
+      "Work with engineering, sales, marketing and support",
+      "Ensure the product supports company strategy",
+    ],
   },
 ];
 
@@ -623,49 +663,44 @@ export type Leader = {
   slug: string;
   name: string;
   title: string;
-  years: number;
   summary: string;
-  expertise: string[];
-  background: string[];
+  years?: number;
+  expertise?: string[];
+  background?: string[];
 };
 
-// SAMPLE content: replace with real management profiles (names, photos and bios).
+// The CEO was provided by Prasthana; the directors are as listed on Tofler (MCA records).
+// Summaries are generic: replace with real bios, years of experience, expertise and photos.
 export const leadership: Leader[] = [
   {
-    slug: "ceo",
-    name: "Name to be added",
-    title: "Founder & Chief Executive Officer",
-    years: 20,
-    summary: "Sets the vision and builds long-term partnerships with clients.",
-    expertise: ["Strategy", "Client partnerships", "Product engineering"],
-    background: ["Led software delivery for global product companies", "Built and scaled engineering teams"],
+    slug: "raghav-gangaraju",
+    name: "Raghav Gangaraju",
+    title: "Chief Executive Officer",
+    summary: "Leads Prasthana's vision, client partnerships and growth.",
   },
   {
-    slug: "cto",
-    name: "Name to be added",
-    title: "Chief Technology Officer",
-    years: 18,
-    summary: "Owns architecture, engineering standards and technology direction.",
-    expertise: ["Architecture", "Cloud and DevOps", "AI and data"],
-    background: ["Architected multi-tenant platforms", "Drives engineering excellence and automation"],
+    slug: "lakshmi-satish-maddela",
+    name: "Lakshmi Satish Maddela",
+    title: "Whole-Time Director",
+    summary: "Works full time in the company's management, guiding its day-to-day direction and growth.",
   },
   {
-    slug: "delivery",
-    name: "Name to be added",
-    title: "Head of Delivery",
-    years: 16,
-    summary: "Accountable for predictable, high-quality delivery across engagements.",
-    expertise: ["Program management", "Release management", "Quality engineering"],
-    background: ["Managed distributed teams across time zones", "Built delivery governance and reporting"],
+    slug: "venkatasatyaramesh-maddela",
+    name: "Venkatasatyaramesh Maddela",
+    title: "Director",
+    summary: "Guides the company's strategy and growth as a member of the board of directors.",
   },
   {
-    slug: "people",
-    name: "Name to be added",
-    title: "Head of People & Culture",
-    years: 14,
-    summary: "Builds a place where engineers grow, learn and do their best work.",
-    expertise: ["Talent acquisition", "Learning and growth", "Engagement"],
-    background: ["Designed career frameworks for engineers", "Runs mentoring and upskilling programs"],
+    slug: "srikrishna-sudheer-yagnamurthy",
+    name: "Srikrishna Sudheer Yagnamurthy",
+    title: "Director",
+    summary: "Guides the company's strategy and growth as a member of the board of directors.",
+  },
+  {
+    slug: "ranjeet-kumar-valmiki",
+    name: "Ranjeet Kumar Valmiki",
+    title: "Director",
+    summary: "Guides the company's strategy and growth as a member of the board of directors.",
   },
 ];
 

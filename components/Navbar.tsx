@@ -30,7 +30,7 @@ export function Navbar() {
     >
       <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
         <nav className="flex items-center justify-between py-4">
-          <Link href="/" aria-label="Prasthana home" className="flex items-center">
+          <Link href="/" aria-label="Prasthana home" className="flex shrink-0 items-center">
             <Image src="/logo-blue-bright.png" alt="Prasthana" width={140} height={40} priority className="h-9 w-auto" />
           </Link>
           <ul className="hidden items-center gap-1 xl:flex">
@@ -40,7 +40,7 @@ export function Navbar() {
                 <li key={n.href}>
                   <Link
                     href={n.href}
-                    className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
+                    className={`relative rounded-full px-3 py-2 text-sm whitespace-nowrap transition-colors ${
                       active ? "text-foreground" : "text-muted hover:text-foreground"
                     }`}
                   >
@@ -61,7 +61,7 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/contact"
-              className="hidden rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition hover:scale-105 sm:block"
+              className="hidden shrink-0 rounded-full bg-foreground px-5 py-2 whitespace-nowrap text-sm font-semibold text-background transition hover:scale-105 sm:block"
             >
               Let&apos;s talk
             </Link>

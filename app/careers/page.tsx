@@ -76,9 +76,20 @@ export default function CareersPage() {
                       <p className="text-xs tracking-widest text-accent uppercase">{j.team}</p>
                       <h3 className="mt-1 text-xl font-semibold">{j.title}</h3>
                       <p className="mt-2 text-muted">{j.about}</p>
+                      <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-muted marker:text-accent">
+                        {j.responsibilities.map((r) => (
+                          <li key={r}>{r}</li>
+                        ))}
+                      </ul>
                       <div className="mt-4 flex flex-wrap gap-4 text-sm text-muted">
                         <span className="inline-flex items-center gap-1.5"><MapPin className="size-4" />{j.location}</span>
-                        <span className="inline-flex items-center gap-1.5"><Briefcase className="size-4" />{j.type} · {j.experience}</span>
+                        {(j.type || j.experience) && (
+                          <span className="inline-flex items-center gap-1.5">
+                            <Briefcase className="size-4" />
+                            {[j.type, j.experience].filter(Boolean).join(" · ")}
+                          </span>
+                        )}
+                        <span className="font-medium text-accent">Apply by email</span>
                       </div>
                     </div>
                     <ArrowUpRight className="size-6 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
