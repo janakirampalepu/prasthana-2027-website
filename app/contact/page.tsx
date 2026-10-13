@@ -28,7 +28,15 @@ export default function ContactPage() {
             </p>
             <p className="mt-4 flex gap-3 text-muted">
               <MapPin className="mt-0.5 size-5 shrink-0 text-accent" />
-              {company.address}
+              <a
+                href={company.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                title="Open in Maps"
+                className="hover:text-foreground hover:underline"
+              >
+                {company.address}
+              </a>
             </p>
             <SocialLinks label className="mt-6" />
           </SpotlightCard>

@@ -14,7 +14,15 @@ export function Footer() {
           <ul className="mt-6 max-w-sm space-y-3 text-sm text-muted">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
-              {company.address}
+              <a
+                href={company.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                title="Open in Maps"
+                className="hover:text-foreground hover:underline"
+              >
+                {company.address}
+              </a>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="size-4 shrink-0 text-accent" />

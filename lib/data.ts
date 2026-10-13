@@ -10,6 +10,10 @@ export const company = {
   email: "info@prasthana.com",
   address:
     "1-98/G/38, Plot No. 37 & 38, Serenity Square, Hitech City Madhapur Road, Hyderabad, Telangana 500081",
+  // Opens Google Maps (or the Maps app on phones) with the office address searched.
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent("Prasthana Software Solutions, Serenity Square, Madhapur Road, Hitech City, Hyderabad, Telangana 500081"),
   linkedin: "https://in.linkedin.com/company/prasthana-software-solutions-pvt-ltd",
   facebook: "https://www.facebook.com/prasthanasoftwaresolutions",
 };
