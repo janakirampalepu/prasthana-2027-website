@@ -45,10 +45,14 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border px-6 sm:px-10 py-6 text-center text-xs text-muted">
-        © 2026 {company.legalName}. All rights reserved. ·{" "}
-        <a href={company.linkedin} className="hover:text-foreground" target="_blank" rel="noreferrer">LinkedIn</a> ·{" "}
-        <a href={company.facebook} className="hover:text-foreground" target="_blank" rel="noreferrer">Facebook</a>
+      <div className="border-t border-border px-6 sm:px-10 py-6 text-xs text-muted">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 sm:flex-row">
+          <p>© 2026 {company.legalName}. All rights reserved.</p>
+          <ul className="flex items-center gap-5">
+            <li><Link href="/terms" className="hover:text-foreground">Terms of Use</Link></li>
+            <li><Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link></li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
