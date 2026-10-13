@@ -18,6 +18,7 @@ export const nav = [
   { href: "/services", label: "Services" },
   { href: "/technologies", label: "Technologies" },
   { href: "/case-studies", label: "Case Studies" },
+  { href: "/engagement-models", label: "How We Work" },
   { href: "/team", label: "Team" },
   { href: "/careers", label: "Careers" },
   { href: "/about", label: "About" },
@@ -254,7 +255,7 @@ export const profiles: Profile[] = [
   },
   {
     slug: "engineer-2",
-    name: "Mobile Engineering Lead",
+    name: "Mobile Engineering Engineer",
     role: "Mobile Lead",
     years: 9,
     summary: "Builds native and cross-platform apps with strong UX.",
@@ -278,6 +279,33 @@ export const profiles: Profile[] = [
     summary: "Automates testing and delivery pipelines end to end.",
     stack: ["Playwright", "GitHub Actions", "Docker", "Terraform"],
     projects: ["Release automation program", "Behavioral health care platform"],
+  },
+  {
+    slug: "engineer-5",
+    name: "Application Architect",
+    role: "Architect",
+    years: 15,
+    summary: "Designs scalable, secure application architectures and guides teams from design to delivery.",
+    stack: ["Microservices", "Angular", "Ruby on Rails", "Postgres"],
+    projects: ["Behavioral health care platform", "API security platform"],
+  },
+  {
+    slug: "engineer-6",
+    name: "Product Manager",
+    role: "Product Management",
+    years: 10,
+    summary: "Turns business goals into roadmaps and clear priorities that engineering teams can deliver.",
+    stack: ["Roadmapping", "Jira", "Figma", "Product Analytics"],
+    projects: ["Fitness membership platform", "Racket sports community app"],
+  },
+  {
+    slug: "engineer-7",
+    name: "Release Manager",
+    role: "Release Management",
+    years: 9,
+    summary: "Plans and coordinates releases so every version ships on schedule with minimal risk.",
+    stack: ["Jira", "GitHub Actions", "Azure DevOps", "Release Automation"],
+    projects: ["Release automation program", "Fitness membership platform"],
   },
 ];
 
@@ -514,4 +542,147 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 // Add more office photos here (put files in /public). Portrait or landscape both work.
 export const officePhotos = [
   { src: "/office-1.jpg", alt: "The Prasthana team at work in our Hyderabad office", width: 768, height: 1024 },
+];
+
+// SAMPLE content: engagement models in detail. Review and adjust to how Prasthana really engages.
+export const engagementDetails = [
+  {
+    slug: "dedicated-team",
+    title: "Dedicated Team",
+    tagline: "A long-term team that works as an extension of yours.",
+    bestFor: "Products that evolve continuously",
+    team: "Engineers, QA and a delivery lead, ramped to your needs",
+    commercial: "Monthly fee per team member",
+    flexibility: "High: scale the team up or down with notice",
+    risk: "Shared: you steer priorities, we own delivery quality",
+    points: [
+      "You set priorities; we run day-to-day delivery",
+      "Team stays with your product and builds deep context",
+      "Fastest path to a stable, high-velocity team",
+    ],
+    accent: "from-violet-500 to-fuchsia-500",
+  },
+  {
+    slug: "fixed-scope",
+    title: "Fixed Scope",
+    tagline: "Clear scope, plan and price for well-defined projects.",
+    bestFor: "Projects with a clear scope and deadline",
+    team: "Cross-functional project team led by a delivery manager",
+    commercial: "Fixed price per agreed milestone",
+    flexibility: "Medium: changes are handled through change requests",
+    risk: "Mostly ours: we commit to scope, timeline and cost",
+    points: [
+      "Detailed scope, milestones and acceptance criteria up front",
+      "Predictable budget and delivery date",
+      "Change requests keep surprises visible and agreed",
+    ],
+    accent: "from-cyan-400 to-sky-500",
+  },
+  {
+    slug: "time-and-material",
+    title: "Time & Material",
+    tagline: "Flexible capacity when scope evolves with learning.",
+    bestFor: "Early-stage products and evolving requirements",
+    team: "Right-sized team that changes as the work does",
+    commercial: "Billed on actual effort at agreed rates",
+    flexibility: "Very high: re-prioritise every sprint",
+    risk: "Shared: transparent reporting keeps spend predictable",
+    points: [
+      "Start quickly with a minimal plan and learn as you go",
+      "Pay for the effort you use, with monthly caps if needed",
+      "Regular reviews to keep budget and scope aligned",
+    ],
+    accent: "from-lime-400 to-green-500",
+  },
+];
+
+export const engagementCompare = [
+  { label: "Best for", key: "bestFor" },
+  { label: "Team", key: "team" },
+  { label: "Commercials", key: "commercial" },
+  { label: "Flexibility", key: "flexibility" },
+  { label: "Risk", key: "risk" },
+] as const;
+
+export const engagementPractices = [
+  { title: "Onboard", text: "Kick-off, access, working agreements and a clear 30-day plan." },
+  { title: "Plan", text: "Roadmap and sprint planning, with priorities set together." },
+  { title: "Deliver", text: "Two-week sprints with working software demonstrated at the end of each." },
+  { title: "Review", text: "Weekly status, monthly steering review and quarterly health checks." },
+  { title: "Improve", text: "Retrospectives and metrics that drive continuous improvement." },
+];
+
+export const engagementPrinciples = [
+  { title: "Transparent", text: "You see the same boards, metrics and risks that we do." },
+  { title: "Accountable", text: "A named delivery lead and a clear escalation path on every engagement." },
+  { title: "Secure by default", text: "NDA, access controls and secure development practices from day one." },
+  { title: "Easy to start, easy to adjust", text: "Begin small, then scale the team or change the model as needs change." },
+];
+
+export type Leader = {
+  slug: string;
+  name: string;
+  title: string;
+  years: number;
+  summary: string;
+  expertise: string[];
+  background: string[];
+};
+
+// SAMPLE content: replace with real management profiles (names, photos and bios).
+export const leadership: Leader[] = [
+  {
+    slug: "ceo",
+    name: "Name to be added",
+    title: "Founder & Chief Executive Officer",
+    years: 20,
+    summary: "Sets the vision and builds long-term partnerships with clients.",
+    expertise: ["Strategy", "Client partnerships", "Product engineering"],
+    background: ["Led software delivery for global product companies", "Built and scaled engineering teams"],
+  },
+  {
+    slug: "cto",
+    name: "Name to be added",
+    title: "Chief Technology Officer",
+    years: 18,
+    summary: "Owns architecture, engineering standards and technology direction.",
+    expertise: ["Architecture", "Cloud and DevOps", "AI and data"],
+    background: ["Architected multi-tenant platforms", "Drives engineering excellence and automation"],
+  },
+  {
+    slug: "delivery",
+    name: "Name to be added",
+    title: "Head of Delivery",
+    years: 16,
+    summary: "Accountable for predictable, high-quality delivery across engagements.",
+    expertise: ["Program management", "Release management", "Quality engineering"],
+    background: ["Managed distributed teams across time zones", "Built delivery governance and reporting"],
+  },
+  {
+    slug: "people",
+    name: "Name to be added",
+    title: "Head of People & Culture",
+    years: 14,
+    summary: "Builds a place where engineers grow, learn and do their best work.",
+    expertise: ["Talent acquisition", "Learning and growth", "Engagement"],
+    background: ["Designed career frameworks for engineers", "Runs mentoring and upskilling programs"],
+  },
+];
+
+// SAMPLE content: careers page "how we invest in people".
+export const peoplePrograms = [
+  { title: "Learning & certifications", text: "Time and budget for courses, certifications and conferences." },
+  { title: "Mentoring", text: "Every engineer is paired with a mentor and a clear growth plan." },
+  { title: "Career paths", text: "Grow as an expert or into leadership, with transparent levels and reviews." },
+  { title: "Tech talks & guilds", text: "Regular sessions across web, mobile, data, quality and AI." },
+  { title: "Health & well-being", text: "Health cover and flexibility that respects life outside work." },
+  { title: "Recognition", text: "Celebrating great work, client wins and long-term contributions." },
+];
+
+export const hiringProcess = [
+  { title: "Apply", text: "Send your resume for an open role or write to us about your interests." },
+  { title: "Intro chat", text: "A conversation about your experience, goals and what you want next." },
+  { title: "Technical discussion", text: "Hands-on discussion with the engineers you would work with." },
+  { title: "Culture & fit", text: "Meet leadership to talk about values, growth and expectations." },
+  { title: "Offer", text: "A clear offer and a structured onboarding plan." },
 ];

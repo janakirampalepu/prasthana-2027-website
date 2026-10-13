@@ -4,6 +4,7 @@ import { Reveal } from "@/components/Reveal";
 import { ServiceCard } from "@/components/ServiceCard";
 import { SectionTitle } from "@/components/SectionTitle";
 import { SpotlightCard } from "@/components/SpotlightCard";
+import Link from "next/link";
 import { CTA } from "@/components/CTA";
 import { engagementModels, services } from "@/lib/data";
 
@@ -38,6 +39,11 @@ export default function ServicesPage() {
             </Reveal>
           ))}
         </div>
+        <Reveal>
+          <Link href="/engagement-models" className="mt-8 inline-block text-accent hover:underline">
+            See how we work and compare models →
+          </Link>
+        </Reveal>
       </section>
       <CTA />
     </>

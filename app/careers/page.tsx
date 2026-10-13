@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { OfficeGallery } from "@/components/OfficeGallery";
-import { company, jobs, values } from "@/lib/data";
+import { company, hiringProcess, jobs, peoplePrograms, values } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Careers" };
 
@@ -29,7 +29,38 @@ export default function CareersPage() {
           ))}
         </div>
       </section>
+      <section className="mx-auto max-w-6xl px-6 sm:px-10 pt-32">
+        <SectionTitle
+          eyebrow="Our people"
+          title="We invest in engineers, not just projects."
+          text="Great software comes from people who keep growing. Here is how we support that."
+        />
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {peoplePrograms.map((p, i) => (
+            <Reveal key={p.title} delay={(i % 3) * 0.07}>
+              <SpotlightCard className="h-full p-6">
+                <h3 className="font-semibold">{p.title}</h3>
+                <p className="mt-2 text-sm text-muted">{p.text}</p>
+              </SpotlightCard>
+            </Reveal>
+          ))}
+        </div>
+      </section>
       <OfficeGallery />
+      <section className="mx-auto max-w-6xl px-6 sm:px-10 pt-32">
+        <SectionTitle eyebrow="Hiring process" title="A clear, respectful process." />
+        <ol className="grid gap-5 md:grid-cols-5">
+          {hiringProcess.map((h, i) => (
+            <Reveal key={h.title} delay={i * 0.07}>
+              <SpotlightCard className="h-full p-6">
+                <span className="text-gradient text-3xl font-semibold">0{i + 1}</span>
+                <h3 className="mt-3 font-semibold">{h.title}</h3>
+                <p className="mt-2 text-sm text-muted">{h.text}</p>
+              </SpotlightCard>
+            </Reveal>
+          ))}
+        </ol>
+      </section>
       <section className="mx-auto max-w-4xl px-6 sm:px-10 pt-28">
         <SectionTitle eyebrow="Open roles" title="Find your next role." />
         <div className="space-y-4">

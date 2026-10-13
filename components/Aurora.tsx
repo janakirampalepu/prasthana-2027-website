@@ -1,7 +1,7 @@
 // Decorative animated background blobs + grid.
 export function Aurora({ className = "" }: { className?: string }) {
   return (
-    <div aria-hidden className={`pointer-events-none absolute inset-0 -z-10 overflow-hidden ${className}`}>
+    <div aria-hidden className={`pointer-events-none absolute inset-0 -z-10 overflow-hidden [mask-image:linear-gradient(to_bottom,black_70%,transparent)] ${className}`}>
       <div className="grid-bg absolute inset-0" />
       <div className="blob animate-float absolute -top-40 left-1/4 h-[520px] w-[520px] rounded-full bg-violet-600/30 blur-[120px]" />
       <div

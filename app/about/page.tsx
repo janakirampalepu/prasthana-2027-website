@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { SpotlightCard } from "@/components/SpotlightCard";
+import Link from "next/link";
 import { CTA } from "@/components/CTA";
 import { OfficeGallery } from "@/components/OfficeGallery";
 import { SocialLinks } from "@/components/SocialLinks";
@@ -28,6 +29,19 @@ export default function AboutPage() {
             </Reveal>
           ))}
         </div>
+      </section>
+      <section className="mx-auto max-w-6xl px-6 sm:px-10 pt-24">
+        <Reveal>
+          <SpotlightCard className="flex flex-col items-start justify-between gap-4 p-8 sm:flex-row sm:items-center">
+            <div>
+              <h2 className="text-2xl font-semibold">Meet our leadership</h2>
+              <p className="mt-1 text-muted">The people accountable for every engagement.</p>
+            </div>
+            <Link href="/leadership" className="rounded-full bg-foreground px-6 py-3 font-semibold text-background transition hover:scale-105">
+              View leadership
+            </Link>
+          </SpotlightCard>
+        </Reveal>
       </section>
       <OfficeGallery />
       <Reveal>

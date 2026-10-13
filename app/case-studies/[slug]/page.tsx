@@ -33,7 +33,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/case-studies
 
   return (
     <>
-      <section className="relative px-6 sm:px-10 pt-40 pb-12">
+      <section className="relative px-6 sm:px-10 pt-40 pb-20 sm:pb-24">
         <Aurora />
         <div className="mx-auto max-w-4xl">
           <Link href="/case-studies" className="mb-8 inline-flex items-center gap-2 text-sm text-muted hover:text-foreground">

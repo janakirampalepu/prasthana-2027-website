@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 
 export function PageHeader({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return (
-    <section className="relative px-6 sm:px-10 pt-40 pb-16">
+    <section className="relative px-6 sm:px-10 pt-40 pb-24 sm:pb-28">
       <Aurora />
       <div className="mx-auto max-w-5xl">
         <Reveal>

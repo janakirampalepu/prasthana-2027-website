@@ -34,7 +34,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
 
   return (
     <>
-      <section className="relative px-6 sm:px-10 pt-40 pb-16">
+      <section className="relative px-6 sm:px-10 pt-40 pb-20 sm:pb-24">
         <Aurora />
         <div className="mx-auto max-w-5xl">
           <Link href="/services" className="mb-8 inline-flex items-center gap-2 text-sm text-muted hover:text-foreground">

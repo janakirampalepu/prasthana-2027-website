@@ -33,7 +33,7 @@ export function Navbar() {
           <Link href="/" aria-label="Prasthana home" className="flex items-center">
             <Image src="/logo-blue-bright.png" alt="Prasthana" width={140} height={40} priority className="h-9 w-auto" />
           </Link>
-          <ul className="hidden items-center gap-1 lg:flex">
+          <ul className="hidden items-center gap-1 xl:flex">
             {nav.map((n) => {
               const active = pathname.startsWith(n.href);
               return (
@@ -67,7 +67,7 @@ export function Navbar() {
             </Link>
             <button
               aria-label="Toggle menu"
-              className="rounded-full p-2 lg:hidden"
+              className="rounded-full p-2 xl:hidden"
               onClick={() => setOpen((o) => !o)}
             >
               {open ? <X /> : <Menu />}
@@ -80,7 +80,7 @@ export function Navbar() {
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
-              className="overflow-hidden pb-4 lg:hidden"
+              className="overflow-hidden pb-4 xl:hidden"
             >
               {[...nav, { href: "/contact", label: "Contact" }].map((n) => (
                 <li key={n.href}>
