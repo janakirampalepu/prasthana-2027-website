@@ -41,13 +41,13 @@ export function Navbar() {
                   <Link
                     href={n.href}
                     className={`relative rounded-full px-3 py-2 text-sm whitespace-nowrap transition-colors ${
-                      active ? "text-foreground" : "text-muted hover:text-foreground"
+                      active ? "font-semibold text-background" : "text-muted hover:text-foreground"
                     }`}
                   >
                     {active && (
                       <motion.span
                         layoutId="nav-pill"
-                        className="absolute inset-0 -z-10 rounded-full bg-foreground/10"
+                        className="absolute inset-0 -z-10 rounded-full bg-foreground"
                         transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -61,7 +61,7 @@ export function Navbar() {
             <ThemeToggle />
             <Link
               href="/contact"
-              className="hidden shrink-0 rounded-full bg-foreground px-5 py-2 whitespace-nowrap text-sm font-semibold text-background transition hover:scale-105 sm:block"
+              className="hidden shrink-0 rounded-full bg-foreground px-5 py-2 whitespace-nowrap text-sm font-semibold text-background transition hover:scale-105 sm:block xl:hidden 2xl:block"
             >
               Let&apos;s talk
             </Link>
@@ -82,9 +82,17 @@ export function Navbar() {
               exit={{ height: 0, opacity: 0 }}
               className="overflow-hidden pb-4 xl:hidden"
             >
-              {[...nav, { href: "/contact", label: "Contact" }].map((n) => (
+              {nav.map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-lg text-muted hover:text-foreground">
+                  <Link
+                    href={n.href}
+                    onClick={() => setOpen(false)}
+                    className={`block rounded-xl px-3 py-3 text-lg ${
+                      pathname.startsWith(n.href)
+                        ? "bg-foreground font-semibold text-background"
+                        : "text-muted hover:text-foreground"
+                    }`}
+                  >
                     {n.label}
                   </Link>
                 </li>

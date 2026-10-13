@@ -21,7 +21,7 @@ const themeScript = `(function(){try{var m=matchMedia("(prefers-color-scheme: li
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${poppins.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning className={`${poppins.variable} ${geistMono.variable} antialiased`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>

@@ -26,11 +26,11 @@
   --accent: #0e7490;
   --border: rgba(20, 20, 43, 0.1);
   --card: rgba(255, 255, 255, 0.7);
-  --grid-line: rgba(20, 20, 43, 0.06);
+  --grid-line: rgba(91, 76, 200, 0.07);
   --brand-1: #7c3aed;
   --brand-2: #0891b2;
   --brand-3: #db2777;
-  --blob-opacity: 0.45;
+  --blob-opacity: 0.4;
 }
 
 @theme inline {
@@ -70,6 +70,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-poppins), system-ui, sans-serif;
+}
+
+/* Light theme only: a soft indigo-to-sky wash behind page headers so they read as a banner. */
+.aurora-wash {
+  display: none;
+}
+:root[data-theme="light"] .aurora-wash {
+  display: block;
+  background: linear-gradient(180deg, #e4e0ff 0%, #e8f1ff 55%, rgba(246, 246, 251, 0) 100%);
 }
 
 .blob {

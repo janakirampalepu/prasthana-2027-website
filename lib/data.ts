@@ -23,6 +23,7 @@ export const nav = [
   { href: "/leadership", label: "Leadership" },
   { href: "/careers", label: "Careers" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export type Service = {
@@ -581,7 +582,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
 
 // Add more office photos here (put files in /public). Portrait or landscape both work.
 export const officePhotos = [
-  { src: "/office-1.jpg", alt: "The Prasthana team at work in our Hyderabad office", width: 768, height: 1024 },
+  { src: "/office-banner.jpg", alt: "Prasthana banner in our office: web, mobile apps, core data and AI, coding with purpose and precision", width: 720, height: 2000 },
 ];
 
 // SAMPLE content: engagement models in detail. Review and adjust to how Prasthana really engages.

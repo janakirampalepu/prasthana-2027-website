@@ -33,7 +33,6 @@ export function Footer() {
             {nav.map((n) => (
               <li key={n.href}><Link href={n.href} className="hover:text-foreground">{n.label}</Link></li>
             ))}
-            <li><Link href="/contact" className="hover:text-foreground">Contact</Link></li>
           </ul>
         </div>
         <div>
