@@ -18,7 +18,7 @@ export function LegalPage({
 }) {
   return (
     <>
-      <PageHeader eyebrow={eyebrow} title={title} text={`Last updated: ${updated}`} />
+      <PageHeader eyebrow={eyebrow} title={title} />
       <div className="mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 lg:grid-cols-[240px_1fr]">
         <aside className="hidden lg:block">
           <nav aria-label="On this page" className="sticky top-28 space-y-1 text-sm">
@@ -53,6 +53,7 @@ export function LegalPage({
               </section>
             ))}
           </div>
+          <p className="mt-12 border-t border-border pt-6 text-sm text-muted">Last updated: {updated}</p>
         </article>
       </div>
     </>

@@ -56,7 +56,7 @@ const sections: LegalSection[] = [
   {
     title: "Cookies and local storage",
     paragraphs: [
-      "The Site does not use advertising or tracking cookies. It uses your browser's local storage to remember your theme preference (light or dark), which stays on your device and is not sent to us. If we add analytics in the future, we will update this policy and, where required, ask for your consent.",
+      "The Site does not use advertising or tracking cookies. It uses your browser's local storage to remember your theme preference (light or dark), which stays on your device and is not sent to us. If we add analytics in the future, we will update this policy and, where required, ask for your consent. See our Cookie Notice for details.",
     ],
   },
   {

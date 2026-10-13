@@ -46,12 +46,13 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border px-6 sm:px-10 py-6 text-xs text-muted">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 sm:flex-row">
-          <p>© 2026 {company.legalName}. All rights reserved.</p>
-          <ul className="flex items-center gap-5">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 text-center">
+          <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
             <li><Link href="/terms" className="hover:text-foreground">Terms of Use</Link></li>
             <li><Link href="/privacy" className="hover:text-foreground">Privacy Policy</Link></li>
+            <li><Link href="/cookie-notice" className="hover:text-foreground">Cookie Notice</Link></li>
           </ul>
+          <p>© 2026 {company.legalName}. All rights reserved.</p>
         </div>
       </div>
     </footer>

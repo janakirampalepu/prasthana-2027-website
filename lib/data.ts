@@ -193,6 +193,28 @@ export const caseStudies: CaseStudy[] = [
     accent: "from-lime-400 to-green-500",
   },
   {
+    slug: "api-security-platform",
+    title: "API security and threat protection platform",
+    client: "Confidential",
+    industry: "Cybersecurity",
+    summary:
+      "Product engineering for an API security platform that discovers, monitors and protects APIs without changing customers' code or infrastructure.",
+    problem:
+      "Modern applications expose hundreds of APIs, and many of them are undocumented or forgotten. Security teams could not see which APIs existed, what data flowed through them or when behaviour turned risky, and could not afford a solution that added latency or required changes to application code.",
+    solution:
+      "We engineered the product's web experience on top of lightweight, non-intrusive data collection: automatic API discovery and inventory, including shadow and unreviewed APIs; views of how data moves through each API function and object; and anomaly and threat detection surfaced as clear, actionable insights for security teams.",
+    outcome: [
+      "Continuous discovery of known and unknown APIs",
+      "Visibility into data risk at the API function and object level",
+      "Anomaly and threat insights without code or platform changes",
+      "No inline performance impact on customer applications",
+    ],
+    stack: ["Angular", "Node.js", "Postgres"],
+    engagement: "Dedicated product engineering team",
+    duration: "Multi-year partnership",
+    accent: "from-rose-500 to-orange-500",
+  },
+  {
     slug: "ai-knowledge-assistant",
     title: "AI knowledge assistant for internal teams",
     client: "Confidential",
