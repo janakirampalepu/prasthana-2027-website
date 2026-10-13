@@ -119,6 +119,7 @@ export const techGroups: TechGroup[] = [
 export type CaseStudy = {
   slug: string;
   title: string;
+  short: string; // compact label for menus and the footer
   client: string;
   industry: string;
   summary: string;
@@ -136,6 +137,7 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: "healthcare-care-coordination",
+    short: "Behavioral Health Platform",
     title: "Whole-person care platform for behavioral health",
     client: "Confidential",
     industry: "Healthcare",
@@ -152,12 +154,13 @@ export const caseStudies: CaseStudy[] = [
       "Security-first engineering for sensitive health data",
     ],
     stack: ["Angular", "Ruby on Rails", "Postgres", "React Native"],
-    engagement: "Dedicated product engineering team",
+    engagement: "Dedicated product & engineering teams",
     duration: "Multi-year partnership",
     accent: "from-violet-500 to-fuchsia-500",
   },
   {
     slug: "fitness-membership-platform",
+    short: "Fitness Membership Platform",
     title: "Membership and booking platform for fitness clubs",
     client: "Confidential",
     industry: "Fitness & Wellness",
@@ -174,12 +177,13 @@ export const caseStudies: CaseStudy[] = [
       "Dashboards for occupancy, revenue and churn risk",
     ],
     stack: ["Flutter", ".NET", "SQL Server"],
-    engagement: "Dedicated product engineering team",
+    engagement: "Dedicated product & engineering teams",
     duration: "Multi-year partnership",
     accent: "from-cyan-400 to-sky-500",
   },
   {
     slug: "racket-sports-community-app",
+    short: "Racket Sports Community App",
     title: "Community app for racket sports players",
     client: "Confidential",
     industry: "Sports & Community",
@@ -195,12 +199,13 @@ export const caseStudies: CaseStudy[] = [
       "Scalable backend ready for community growth",
     ],
     stack: ["Native iOS", "Native Android", "Ruby on Rails", "Postgres"],
-    engagement: "Product build, end to end",
+    engagement: "Dedicated product & engineering teams",
     duration: "Idea to launch",
     accent: "from-lime-400 to-green-500",
   },
   {
     slug: "api-security-platform",
+    short: "API Security Platform",
     title: "API security and threat protection platform",
     client: "Confidential",
     industry: "Cybersecurity",
@@ -217,12 +222,36 @@ export const caseStudies: CaseStudy[] = [
       "No inline performance impact on customer applications",
     ],
     stack: ["Angular", "Node.js", "Postgres"],
-    engagement: "Dedicated product engineering team",
+    engagement: "Dedicated product & engineering teams",
     duration: "Multi-year partnership",
     accent: "from-rose-500 to-orange-500",
   },
   {
+    slug: "digital-agency-engineering-partner",
+    short: "Digital Agency Partnership",
+    title: "Frontend and backend engineering partner for a digital agency",
+    client: "Confidential",
+    industry: "Digital Services",
+    summary:
+      "Extended engineering support, frontend and backend, for a digital growth agency building websites, automation and marketing funnels for its clients.",
+    problem:
+      "A digital agency serving small and mid-sized businesses needed to deliver fast, secure, search-friendly websites and automation for many clients at once. Demand for custom development outpaced its in-house capacity, and delivery quality and turnaround time had to stay consistent.",
+    solution:
+      "We became the agency's engineering partner. Our frontend engineers built responsive, fast-loading, SEO-friendly interfaces from design, while our backend engineers delivered the APIs, integrations and automation behind them. Shared standards, code reviews and a predictable release rhythm let the agency scale delivery without sacrificing quality.",
+    outcome: [
+      "Added frontend and backend capacity without hiring delays",
+      "Fast, secure and SEO-friendly client websites",
+      "Automation and integrations behind client workflows",
+      "Consistent delivery across many parallel projects",
+    ],
+    stack: ["React", "Node.js", "Postgres"],
+    engagement: "Dedicated product & engineering teams",
+    duration: "Multi-year partnership",
+    accent: "from-sky-400 to-indigo-500",
+  },
+  {
     slug: "ai-knowledge-assistant",
+    short: "AI Knowledge Assistant",
     title: "AI knowledge assistant for internal teams",
     client: "Confidential",
     industry: "Technology",
@@ -232,7 +261,7 @@ export const caseStudies: CaseStudy[] = [
       "We built a RAG assistant with permission-aware retrieval, citations and an evaluation harness to keep answers grounded.",
     outcome: ["Answers with source citations", "Permission-aware access", "Continuous quality evaluation"],
     stack: ["Angular", "Amazon Bedrock", "Python"],
-    engagement: "Dedicated team",
+    engagement: "Dedicated product & engineering teams",
     duration: "4 months",
     accent: "from-amber-400 to-orange-500",
   },

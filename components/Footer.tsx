@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
-import { company, nav, services } from "@/lib/data";
+import { caseStudies, company, nav, services } from "@/lib/data";
 import { SocialLinks } from "./SocialLinks";
 
 export function Footer() {
   return (
     <footer className="relative mt-32 border-t border-border">
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 py-16 md:grid-cols-4">
-        <div className="md:col-span-2">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 py-16 md:grid-cols-3 lg:grid-cols-5">
+        <div className="md:col-span-3 lg:col-span-2">
           <Image src="/logo-blue-bright.png" alt="Prasthana" width={140} height={40} className="h-10 w-auto" />
           <p className="mt-3 max-w-sm text-muted">{company.tagline}. Software application development company.</p>
           <ul className="mt-6 max-w-sm space-y-3 text-sm text-muted">
@@ -48,6 +48,16 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-muted">
             {services.map((s) => (
               <li key={s.slug}><Link href={`/services/${s.slug}`} className="hover:text-foreground">{s.title}</Link></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="mb-4 text-sm font-semibold">
+            <Link href="/case-studies" className="hover:text-foreground">Case Studies</Link>
+          </p>
+          <ul className="space-y-2 text-sm text-muted">
+            {caseStudies.map((c) => (
+              <li key={c.slug}><Link href={`/case-studies/${c.slug}`} className="hover:text-foreground">{c.short}</Link></li>
             ))}
           </ul>
         </div>
