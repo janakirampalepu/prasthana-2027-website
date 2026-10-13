@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Mail, MapPin } from "lucide-react";
 import { company, nav, services } from "@/lib/data";
 import { SocialLinks } from "./SocialLinks";
 
@@ -8,13 +9,23 @@ export function Footer() {
     <footer className="relative mt-32 border-t border-border">
       <div className="mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Image src="/logo.png" alt="Prasthana" width={140} height={40} className="logo-img h-10 w-auto" />
+          <Image src="/logo-blue-bright.png" alt="Prasthana" width={140} height={40} className="h-10 w-auto" />
           <p className="mt-3 max-w-sm text-muted">{company.tagline}. Software application development company.</p>
-          <p className="mt-6 max-w-sm text-sm text-muted">{company.address}</p>
-          <a href={`mailto:${company.email}`} className="mt-3 inline-block text-sm text-accent hover:underline">
-            {company.email}
-          </a>
-          <SocialLinks className="mt-5" />
+          <ul className="mt-6 max-w-sm space-y-3 text-sm text-muted">
+            <li className="flex gap-3">
+              <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />
+              {company.address}
+            </li>
+            <li className="flex items-center gap-3">
+              <Mail className="size-4 shrink-0 text-accent" />
+              <a href={`mailto:${company.email}`} className="text-accent hover:underline">
+                {company.email}
+              </a>
+            </li>
+          </ul>
+          <div className="mt-6">
+            <SocialLinks />
+          </div>
         </div>
         <div>
           <p className="mb-4 text-sm font-semibold">Company</p>

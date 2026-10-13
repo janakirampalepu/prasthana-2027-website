@@ -13,7 +13,7 @@ export default function CaseStudiesPage() {
       <PageHeader
         eyebrow="Case studies"
         title="Problems solved. Outcomes delivered."
-        text="A look at how we have helped teams in healthcare, wellness, infrastructure and technology."
+        text="A look at how we have helped teams in healthcare, fitness, sports and technology."
       />
       <section className="mx-auto max-w-6xl px-6 sm:px-10">
         <div className="grid gap-5 md:grid-cols-2">

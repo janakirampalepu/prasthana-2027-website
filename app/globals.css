@@ -16,7 +16,6 @@
   --brand-2: #22d3ee;
   --brand-3: #f472b6;
   --blob-opacity: 1;
-  --logo-filter: none;
 }
 
 :root[data-theme="light"] {
@@ -32,7 +31,6 @@
   --brand-2: #0891b2;
   --brand-3: #db2777;
   --blob-opacity: 0.45;
-  --logo-filter: invert(1);
 }
 
 @theme inline {
@@ -72,11 +70,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
-}
-
-/* The logo asset is white; invert it on the light theme. */
-.logo-img {
-  filter: var(--logo-filter);
 }
 
 .blob {

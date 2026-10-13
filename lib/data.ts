@@ -124,65 +124,85 @@ export type CaseStudy = {
   accent: string;
 };
 
-// SAMPLE content: replace with real projects.
+// Client details are confidential: case studies describe our product engineering work only.
+// The AI knowledge assistant entry is SAMPLE content.
 export const caseStudies: CaseStudy[] = [
   {
     slug: "healthcare-care-coordination",
-    title: "Care coordination platform for a healthcare provider",
-    client: "Healthcare client",
+    title: "Whole-person care platform for behavioral health",
+    client: "Confidential",
     industry: "Healthcare",
-    summary: "A web and mobile platform that connects care teams and patients in one workflow.",
+    summary:
+      "Product engineering for a care-enablement platform and mobile app serving people with complex behavioral, medical and social needs.",
     problem:
-      "Care teams worked across disconnected tools, which slowed follow-ups and made patient engagement hard to track.",
+      "Serving populations with complex behavioral health, medical and social needs means coordinating outreach, enrollment, services and reporting across payers, providers and members, often in separate tools. Teams needed one secure platform that could identify who needs help, engage them early and keep care moving around the clock.",
     solution:
-      "We delivered a role-based web portal and a companion mobile app with secure messaging, task workflows and a unified patient timeline.",
-    outcome: ["Faster care-team follow-ups", "Single view of patient engagement", "Release cadence moved to weekly"],
-    stack: ["React", "Ruby on Rails", "Postgres", "React Native"],
-    engagement: "Dedicated team",
-    duration: "12+ months",
+      "We engineered the product across web and mobile: risk stratification and assessment workflows, outreach and enrollment tooling, programmatic services with remote monitoring, and analytics and reporting for each stakeholder. A member-facing mobile app extends care beyond the clinic. Security and compliance were designed in from the start, in line with healthcare data requirements.",
+    outcome: [
+      "One platform from risk identification to ongoing care",
+      "Member app available on iOS and Android",
+      "Analytics and reporting for payers, providers and care teams",
+      "Security-first engineering for sensitive health data",
+    ],
+    stack: ["Angular", "Ruby on Rails", "Postgres", "React Native"],
+    engagement: "Dedicated product engineering team",
+    duration: "Multi-year partnership",
     accent: "from-violet-500 to-fuchsia-500",
   },
   {
-    slug: "wellness-mobile-app",
-    title: "Wellness app with personalised programs",
-    client: "Wellness client",
-    industry: "Wellness",
-    summary: "Native iOS and Android apps delivering personalised programs and progress tracking.",
-    problem: "The client needed a polished native experience with offline support and rich progress tracking.",
+    slug: "fitness-membership-platform",
+    title: "Membership and booking platform for fitness clubs",
+    client: "Confidential",
+    industry: "Fitness & Wellness",
+    summary:
+      "Product engineering for fitness-center membership software: memberships, booking, billing and a branded member app.",
+    problem:
+      "Gyms, health clubs and franchise chains run on memberships, classes, personal training and recurring billing. Operators needed a single system that handled joins, upgrades, freezes and renewals across locations, while giving members a smooth way to book and manage everything from their phone.",
     solution:
-      "We built SwiftUI and Jetpack Compose apps on a shared API, with offline-first sync and an analytics layer for engagement insights.",
-    outcome: ["Native feel on both platforms", "Offline-first experience", "Engagement analytics for the product team"],
-    stack: ["SwiftUI", "Jetpack Compose", "Node.js", "MySQL"],
-    engagement: "Fixed scope + support",
-    duration: "8 months",
+      "We built core parts of the product: membership lifecycle management, class and personal-training scheduling, automated billing and collections, and a custom-branded member app, built once in Flutter for both iOS and Android, for booking, add-ons and plan management. We also built staff tools for check-ins and upsells, reporting dashboards, and integrations with access control, payments and point-of-sale systems.",
+    outcome: [
+      "Membership lifecycle managed across multiple locations",
+      "Members book classes and manage plans from their phone",
+      "Automated billing and collections",
+      "Dashboards for occupancy, revenue and churn risk",
+    ],
+    stack: ["Flutter", ".NET", "SQL Server"],
+    engagement: "Dedicated product engineering team",
+    duration: "Multi-year partnership",
     accent: "from-cyan-400 to-sky-500",
   },
   {
-    slug: "infrastructure-analytics",
-    title: "Operations analytics for an infrastructure company",
-    client: "Infrastructure client",
-    industry: "Infrastructure",
-    summary: "A data platform and BI dashboards giving leadership live visibility into operations.",
-    problem: "Reporting was manual and spread across spreadsheets and legacy databases.",
+    slug: "racket-sports-community-app",
+    title: "Community app for racket sports players",
+    client: "Confidential",
+    industry: "Sports & Community",
+    summary:
+      "End-to-end product engineering of a mobile community app that brings racket sport players together.",
+    problem:
+      "Racket sport players often struggle to find partners, organise games and stay connected with their local community. The product needed to feel social, fast and simple enough to use right before a match.",
     solution:
-      "We consolidated sources into a SQL Server warehouse, automated pipelines and shipped Power BI dashboards for each business unit.",
-    outcome: ["Manual reporting eliminated", "Live operational dashboards", "One trusted source of truth"],
-    stack: ["SQL Server", "Power BI", ".NET", "Azure DevOps"],
-    engagement: "Time & material",
-    duration: "6 months",
+      "We took the product from idea to launch: product and UX design, native iOS and Android apps, and the backend services behind them. The focus was a lightweight community experience that makes it easy for players to connect and get on court.",
+    outcome: [
+      "Idea to launched product on iOS and Android",
+      "A simple, social experience built for players",
+      "Scalable backend ready for community growth",
+    ],
+    stack: ["Native iOS", "Native Android", "Ruby on Rails", "Postgres"],
+    engagement: "Product build, end to end",
+    duration: "Idea to launch",
     accent: "from-lime-400 to-green-500",
   },
   {
     slug: "ai-knowledge-assistant",
     title: "AI knowledge assistant for internal teams",
-    client: "Technology client",
+    client: "Confidential",
     industry: "Technology",
     summary: "A retrieval-augmented assistant that answers questions from internal documents.",
     problem: "Employees lost hours searching wikis, tickets and documents for answers.",
     solution:
       "We built a RAG assistant with permission-aware retrieval, citations and an evaluation harness to keep answers grounded.",
     outcome: ["Answers with source citations", "Permission-aware access", "Continuous quality evaluation"],
-    stack: ["Next.js", "Node.js", "Postgres", "LLM APIs"],
+    stack: ["Angular", "Amazon Bedrock", "Python"],
     engagement: "Dedicated team",
     duration: "4 months",
     accent: "from-amber-400 to-orange-500",
@@ -208,7 +228,7 @@ export const profiles: Profile[] = [
     years: 12,
     summary: "Leads web platform delivery from architecture to release.",
     stack: ["React", "Node.js", "Postgres", "AWS"],
-    projects: ["Care coordination platform", "AI knowledge assistant"],
+    projects: ["Behavioral health care platform", "AI knowledge assistant"],
   },
   {
     slug: "engineer-2",
@@ -217,7 +237,7 @@ export const profiles: Profile[] = [
     years: 9,
     summary: "Builds native and cross-platform apps with strong UX.",
     stack: ["SwiftUI", "Jetpack Compose", "Flutter", "React Native"],
-    projects: ["Wellness mobile app", "Care coordination platform"],
+    projects: ["Fitness membership platform", "Racket sports community app"],
   },
   {
     slug: "engineer-3",
@@ -226,7 +246,7 @@ export const profiles: Profile[] = [
     years: 14,
     summary: "Designs warehouses, pipelines and BI for decision makers.",
     stack: ["SQL Server", "Oracle", "Power BI", "Apache Superset"],
-    projects: ["Operations analytics platform"],
+    projects: ["Behavioral health care platform (analytics and reporting)"],
   },
   {
     slug: "engineer-4",
@@ -235,7 +255,7 @@ export const profiles: Profile[] = [
     years: 8,
     summary: "Automates testing and delivery pipelines end to end.",
     stack: ["Playwright", "GitHub Actions", "Docker", "Terraform"],
-    projects: ["Release automation program", "Care coordination platform"],
+    projects: ["Release automation program", "Behavioral health care platform"],
   },
 ];
 
@@ -367,7 +387,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { q: "Do you handle app store submission?", a: "Yes, from developer accounts to review and release." },
       { q: "Can the app work offline?", a: "Yes, we design offline-first sync where it matters." },
     ],
-    caseStudy: "wellness-mobile-app",
+    caseStudy: "fitness-membership-platform",
   },
   quality: {
     headline: "Ship every release with confidence.",
@@ -440,7 +460,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
       { q: "Can you work with legacy data sources?", a: "Yes, including Oracle and SQL Server estates." },
       { q: "How do you ensure data quality?", a: "Validation checks are built into every pipeline." },
     ],
-    caseStudy: "infrastructure-analytics",
+    caseStudy: "healthcare-care-coordination",
   },
   ai: {
     headline: "Put your data to work with ML and AI.",

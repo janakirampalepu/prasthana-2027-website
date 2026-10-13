@@ -31,7 +31,7 @@ export function Navbar() {
       <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
         <nav className="flex items-center justify-between py-4">
           <Link href="/" aria-label="Prasthana home" className="flex items-center">
-            <Image src="/logo.png" alt="Prasthana" width={140} height={40} priority className="logo-img h-9 w-auto" />
+            <Image src="/logo-blue-bright.png" alt="Prasthana" width={140} height={40} priority className="h-9 w-auto" />
           </Link>
           <ul className="hidden items-center gap-1 lg:flex">
             {nav.map((n) => {
