@@ -12,6 +12,10 @@ export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  // Move the active pill the moment a tab is tapped, not after the next page has loaded.
+  // The pending choice is ignored once the route has changed (from !== pathname).
+  const [pending, setPending] = useState<{ href: string; from: string } | null>(null);
+  const current = pending && pending.from === pathname ? pending.href : pathname;
   const { scrollYProgress } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
@@ -35,20 +39,21 @@ export function Navbar() {
           </Link>
           <ul className="hidden items-center gap-1 xl:flex">
             {nav.map((n) => {
-              const active = pathname.startsWith(n.href);
+              const active = current.startsWith(n.href);
               return (
                 <li key={n.href}>
                   <Link
                     href={n.href}
-                    className={`relative rounded-full px-3 py-2 text-sm whitespace-nowrap transition-colors ${
+                    onClick={() => setPending({ href: n.href, from: pathname })}
+                    className={`relative rounded-full px-3 py-2 text-sm whitespace-nowrap transition-colors duration-300 ${
                       active ? "font-semibold text-background" : "text-muted hover:text-foreground"
                     }`}
                   >
                     {active && (
                       <motion.span
                         layoutId="nav-pill"
-                        className="absolute inset-0 -z-10 rounded-full bg-foreground"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                        className="absolute inset-0 -z-10 rounded-full bg-foreground will-change-transform"
+                        transition={{ type: "spring", stiffness: 240, damping: 28, mass: 0.9 }}
                       />
                     )}
                     {n.label}
@@ -88,7 +93,7 @@ export function Navbar() {
                     href={n.href}
                     onClick={() => setOpen(false)}
                     className={`block rounded-xl px-3 py-3 text-lg ${
-                      pathname.startsWith(n.href)
+                      current.startsWith(n.href)
                         ? "bg-foreground font-semibold text-background"
                         : "text-muted hover:text-foreground"
                     }`}

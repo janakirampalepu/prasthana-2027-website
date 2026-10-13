@@ -674,34 +674,34 @@ export type Leader = {
 // Summaries are generic: replace with real bios, years of experience, expertise and photos.
 export const leadership: Leader[] = [
   {
-    slug: "raghav-gangaraju",
-    name: "Raghav Gangaraju",
-    title: "Chief Executive Officer",
-    summary: "Leads Prasthana's vision, client partnerships and growth.",
-  },
-  {
     slug: "lakshmi-satish-maddela",
     name: "Lakshmi Satish Maddela",
     title: "Whole-Time Director",
-    summary: "Works full time in the company's management, guiding its day-to-day direction and growth.",
+    summary: "Works full time in the company's management, supporting the leadership team and the company's growth.",
   },
   {
-    slug: "venkatasatyaramesh-maddela",
-    name: "Venkatasatyaramesh Maddela",
-    title: "Director",
-    summary: "Guides the company's strategy and growth as a member of the board of directors.",
+    slug: "raghav-gangaraju",
+    name: "Raghav Gangaraju",
+    title: "Chief Executive Officer",
+    summary: "Leads Prasthana's vision, strategy and client partnerships, and oversees day-to-day operations and governance.",
   },
   {
     slug: "srikrishna-sudheer-yagnamurthy",
     name: "Srikrishna Sudheer Yagnamurthy",
+    title: "Executive Director",
+    summary: "Provides executive-level guidance on the company's strategy, direction and long-term growth.",
+  },
+  {
+    slug: "venkatasatyaramesh-maddela",
+    name: "Venkata Satya Ramesh Maddela",
     title: "Director",
-    summary: "Guides the company's strategy and growth as a member of the board of directors.",
+    summary: "Contributes strategic direction and governance oversight as a member of the board of directors.",
   },
   {
     slug: "ranjeet-kumar-valmiki",
     name: "Ranjeet Kumar Valmiki",
     title: "Director",
-    summary: "Guides the company's strategy and growth as a member of the board of directors.",
+    summary: "Supports the board with guidance on the company's long-term direction and responsible growth.",
   },
 ];
 
