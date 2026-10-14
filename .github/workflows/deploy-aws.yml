@@ -1,0 +1,104 @@
+name: Deploy to AWS
+
+# Builds the static site and publishes it to S3, then clears the CloudFront cache.
+# Runs on every push to main. See docs/DEPLOY-AWS.md for the one-time AWS setup.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run: show what would be uploaded or deleted, change nothing"
+        type: boolean
+        default: false
+
+# Never run two deploys at once; let a running deploy finish.
+concurrency:
+  group: deploy-aws
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  id-token: write # lets the job get short-lived AWS credentials (OIDC), so no access keys are stored
+
+jobs:
+  build:
+    name: Build static site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build static export (./out)
+        run: npm run build:static
+
+      - name: Upload build output
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: out
+          retention-days: 14
+
+  deploy:
+    name: Upload to S3 and invalidate CloudFront
+    needs: build
+    # Skipped (not failed) until the S3_BUCKET variable is set in the repo settings.
+    if: ${{ vars.S3_BUCKET != '' }}
+    runs-on: ubuntu-latest
+    env:
+      S3_BUCKET: ${{ vars.S3_BUCKET }}
+      DRY_RUN: ${{ inputs.dry_run == true && '--dryrun' || '' }}
+    steps:
+      - name: Download build output
+        uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: out
+
+      - name: Configure AWS credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
+      # Pages and other files: always revalidate so visitors see updates immediately.
+      # --delete removes files that no longer exist in the build.
+      - name: Sync site files
+        run: |
+          aws s3 sync out "s3://${S3_BUCKET}" $DRY_RUN --delete \
+            --exclude "_next/static/*" \
+            --cache-control "public, max-age=0, must-revalidate"
+
+      # Hashed build assets never change, so they can be cached for a year.
+      # Old ones are kept (no --delete) so pages cached by visitors keep working.
+      - name: Sync versioned assets
+        run: |
+          aws s3 sync out/_next/static "s3://${S3_BUCKET}/_next/static" $DRY_RUN \
+            --cache-control "public, max-age=31536000, immutable"
+
+      # These two generated images have no file extension, so S3 cannot guess their type.
+      - name: Set content type for share images
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          for f in opengraph-image twitter-image; do
+            aws s3 cp "out/${f}" "s3://${S3_BUCKET}/${f}" \
+              --content-type image/png \
+              --cache-control "public, max-age=0, must-revalidate"
+          done
+
+      - name: Invalidate CloudFront cache
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"

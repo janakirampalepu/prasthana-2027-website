@@ -4,6 +4,9 @@ export const alt = "Prasthana: Coding with Purpose & Precision";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Required for the static export (S3 + CloudFront); harmless elsewhere.
+export const dynamic = "force-static";
+
 // Share preview shown when a page link is posted on LinkedIn, WhatsApp, Slack, etc.
 export default function OpengraphImage() {
   return new ImageResponse(

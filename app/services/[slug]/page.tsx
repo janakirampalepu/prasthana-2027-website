@@ -13,8 +13,6 @@ import { caseStudies, company, serviceDetails, services } from "@/lib/data";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL, pageMeta } from "@/lib/seo";
 
-export const instant = false;
-
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
 }

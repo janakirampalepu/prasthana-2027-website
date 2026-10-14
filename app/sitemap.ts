@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { caseStudies, services } from "@/lib/data";
 import { LAST_UPDATED, SITE_URL } from "@/lib/seo";
 
+// Required for the static export (S3 + CloudFront); harmless elsewhere.
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages: { path: string; priority: number }[] = [
     { path: "", priority: 1 },

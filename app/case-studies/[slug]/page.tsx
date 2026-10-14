@@ -9,8 +9,6 @@ import { caseStudies, company } from "@/lib/data";
 import { JsonLd } from "@/components/JsonLd";
 import { LAST_UPDATED, SITE_URL, pageMeta } from "@/lib/seo";
 
-export const instant = false;
-
 export function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
 }
