@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { ArrowUpRight, MapPin, Briefcase } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
@@ -6,12 +7,34 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { OfficeGallery } from "@/components/OfficeGallery";
 import { company, hiringProcess, jobs, peoplePrograms, values } from "@/lib/data";
+import { JsonLd } from "@/components/JsonLd";
+import { LAST_UPDATED, SITE_URL, orgAddress } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Careers" };
+export const metadata: Metadata = pageMeta({
+  title: "Careers in Hyderabad",
+  description:
+    "Join Prasthana in Hyderabad. Open roles for Ruby on Rails, front-end, .NET, QA, iOS and product management, with learning, mentoring and clear career paths.",
+  path: "/careers",
+});
+
+// JobPosting data lets Google show these roles in Google Jobs. datePosted uses the date the openings were last reviewed.
+const jobSchema = jobs.map((j) => ({
+  "@context": "https://schema.org",
+  "@type": "JobPosting",
+  title: j.title,
+  description: `<p>${j.about}</p><ul>${j.responsibilities.map((r) => `<li>${r}</li>`).join("")}</ul>`,
+  datePosted: LAST_UPDATED,
+  employmentType: "FULL_TIME",
+  directApply: false,
+  hiringOrganization: { "@type": "Organization", name: company.name, sameAs: SITE_URL },
+  jobLocation: { "@type": "Place", address: orgAddress },
+  identifier: { "@type": "PropertyValue", name: company.name, value: j.slug },
+}));
 
 export default function CareersPage() {
   return (
     <>
+      <JsonLd data={jobSchema} />
       <PageHeader
         eyebrow="Careers"
         title="Build your craft with us."

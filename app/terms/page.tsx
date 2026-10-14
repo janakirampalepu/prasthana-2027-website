@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { LegalPage, type LegalSection } from "@/components/LegalPage";
 import { company } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Terms of Use" };
+export const metadata: Metadata = pageMeta({
+  title: "Terms of Use",
+  description:
+    "The terms that govern your use of the Prasthana website.",
+  path: "/terms",
+});
 
 const sections: LegalSection[] = [
   {

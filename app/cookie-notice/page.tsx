@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { LegalPage, type LegalSection } from "@/components/LegalPage";
 import { company } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Cookie Notice" };
+export const metadata: Metadata = pageMeta({
+  title: "Cookie Notice",
+  description:
+    "How the Prasthana website uses cookies and similar technologies, and how you can control them.",
+  path: "/cookie-notice",
+});
 
 const sections: LegalSection[] = [
   {

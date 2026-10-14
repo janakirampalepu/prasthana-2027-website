@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -8,7 +9,12 @@ import Link from "next/link";
 import { CTA } from "@/components/CTA";
 import { engagementModels, services } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Services" };
+export const metadata: Metadata = pageMeta({
+  title: "Software Development Services",
+  description:
+    "Web application development, mobile app development, quality engineering, DevOps, analytics, and big data, machine learning and AI services from Prasthana in Hyderabad.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (

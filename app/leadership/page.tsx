@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { SpotlightCard } from "@/components/SpotlightCard";
@@ -6,10 +7,12 @@ import { Counter } from "@/components/Counter";
 import { CTA } from "@/components/CTA";
 import { leadership } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Leadership",
-  description: "Meet the management team behind Prasthana.",
-};
+export const metadata: Metadata = pageMeta({
+  title: "Leadership Team",
+  description:
+    "Meet the leadership of Prasthana Software Solutions: the leaders accountable for every engagement.",
+  path: "/leadership",
+});
 
 const initials = (name: string) =>
   name.split(" ").filter(Boolean).slice(0, 2).map((w) => w[0]).join("").toUpperCase();

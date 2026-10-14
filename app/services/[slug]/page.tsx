@@ -9,7 +9,9 @@ import { SpotlightCard } from "@/components/SpotlightCard";
 import { CaseCard } from "@/components/CaseCard";
 import { Icon } from "@/components/Icon";
 import { CTA } from "@/components/CTA";
-import { caseStudies, serviceDetails, services } from "@/lib/data";
+import { caseStudies, company, serviceDetails, services } from "@/lib/data";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, pageMeta } from "@/lib/seo";
 
 export const instant = false;
 
@@ -20,7 +22,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/services/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const s = services.find((x) => x.slug === slug);
-  return { title: s?.title ?? "Service", description: s?.blurb };
+  const d = serviceDetails[slug];
+  if (!s || !d) return { title: "Service" };
+  return pageMeta({
+    title: s.title,
+    description: `${s.blurb} ${d.overview}`,
+    path: `/services/${slug}`,
+  });
 }
 
 export default async function ServicePage({ params }: PageProps<"/services/[slug]">) {
@@ -32,8 +40,40 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
   const related = caseStudies.find((c) => c.slug === d.caseStudy);
   const others = services.filter((x) => x.slug !== slug);
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        name: s.title,
+        serviceType: s.title,
+        description: `${s.blurb} ${d.overview}`,
+        url: `${SITE_URL}/services/${slug}`,
+        provider: { "@type": "Organization", name: company.name, url: SITE_URL },
+        areaServed: "Worldwide",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+          { "@type": "ListItem", position: 3, name: s.title, item: `${SITE_URL}/services/${slug}` },
+        ],
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: d.faqs.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      },
+    ],
+  };
+
   return (
     <>
+      <JsonLd data={schema} />
       <section className="relative px-6 sm:px-10 pt-40 pb-20 sm:pb-24">
         <Aurora />
         <div className="mx-auto max-w-5xl">

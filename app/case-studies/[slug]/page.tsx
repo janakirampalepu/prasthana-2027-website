@@ -5,7 +5,9 @@ import { ArrowLeft, Check } from "lucide-react";
 import { Aurora } from "@/components/Aurora";
 import { Reveal } from "@/components/Reveal";
 import { CTA } from "@/components/CTA";
-import { caseStudies } from "@/lib/data";
+import { caseStudies, company } from "@/lib/data";
+import { JsonLd } from "@/components/JsonLd";
+import { LAST_UPDATED, SITE_URL, pageMeta } from "@/lib/seo";
 
 export const instant = false;
 
@@ -16,13 +18,38 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/case-studies/[slug]">): Promise<Metadata> {
   const { slug } = await params;
   const c = caseStudies.find((x) => x.slug === slug);
-  return { title: c?.title ?? "Case study", description: c?.summary };
+  if (!c) return { title: "Case study" };
+  return pageMeta({ title: c.title, description: c.summary, path: `/case-studies/${slug}` });
 }
 
 export default async function CaseStudyPage({ params }: PageProps<"/case-studies/[slug]">) {
   const { slug } = await params;
   const c = caseStudies.find((x) => x.slug === slug);
   if (!c) notFound();
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: c.title,
+        description: c.summary,
+        url: `${SITE_URL}/case-studies/${slug}`,
+        dateModified: LAST_UPDATED,
+        author: { "@type": "Organization", name: company.name, url: SITE_URL },
+        publisher: { "@type": "Organization", name: company.name, url: SITE_URL },
+        keywords: c.stack.join(", "),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          { "@type": "ListItem", position: 2, name: "Case Studies", item: `${SITE_URL}/case-studies` },
+          { "@type": "ListItem", position: 3, name: c.title, item: `${SITE_URL}/case-studies/${slug}` },
+        ],
+      },
+    ],
+  };
 
   const meta = [
     ["Client", c.client],
@@ -33,6 +60,7 @@ export default async function CaseStudyPage({ params }: PageProps<"/case-studies
 
   return (
     <>
+      <JsonLd data={schema} />
       <section className="relative px-6 sm:px-10 pt-40 pb-20 sm:pb-24">
         <Aurora />
         <div className="mx-auto max-w-4xl">

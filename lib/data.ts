@@ -703,15 +703,9 @@ export type Leader = {
   background?: string[];
 };
 
-// The CEO was provided by Prasthana; the directors are as listed on Tofler (MCA records).
-// Summaries are generic: replace with real bios, years of experience, expertise and photos.
+// Names and roles were provided by Prasthana. Descriptions are role-based and generic:
+// replace with real bios, years of experience, expertise and photos.
 export const leadership: Leader[] = [
-  {
-    slug: "lakshmi-satish-maddela",
-    name: "Lakshmi Satish Maddela",
-    title: "Whole-Time Director",
-    summary: "Works full time in the company's management, supporting the leadership team and the company's growth.",
-  },
   {
     slug: "raghav-gangaraju",
     name: "Raghav Gangaraju",
@@ -719,22 +713,28 @@ export const leadership: Leader[] = [
     summary: "Leads Prasthana's vision, strategy and client partnerships, and oversees day-to-day operations and governance.",
   },
   {
-    slug: "srikrishna-sudheer-yagnamurthy",
-    name: "Srikrishna Sudheer Yagnamurthy",
-    title: "Executive Director",
-    summary: "Provides executive-level guidance on the company's strategy, direction and long-term growth.",
+    slug: "harish-tadikamalla",
+    name: "Harish Tadikamalla",
+    title: "Senior Product Manager",
+    summary: "Owns product strategy and roadmaps, turning client goals into clear priorities that engineering teams can deliver.",
   },
   {
-    slug: "venkatasatyaramesh-maddela",
-    name: "Venkata Satya Ramesh Maddela",
-    title: "Director",
-    summary: "Contributes strategic direction and governance oversight as a member of the board of directors.",
+    slug: "sagar-kshetri",
+    name: "Sagar Kshetri",
+    title: "Senior Manager, Development",
+    summary: "Guides development teams and technical decisions, mentoring engineers across backend projects.",
   },
   {
-    slug: "ranjeet-kumar-valmiki",
-    name: "Ranjeet Kumar Valmiki",
-    title: "Director",
-    summary: "Supports the board with guidance on the company's long-term direction and responsible growth.",
+    slug: "janakiram-palepu",
+    name: "Janakiram Palepu",
+    title: "Senior Manager, Development",
+    summary: "Guides development teams and technical decisions, mentoring engineers across web and mobile projects.",
+  },
+  {
+    slug: "narasimha-charya-vedagopuram",
+    name: "Narasimha Charya Vedagopuram",
+    title: "Delivery Manager",
+    summary: "Keeps engagements on track, managing plans, risks and communication for predictable delivery.",
   },
 ];
 

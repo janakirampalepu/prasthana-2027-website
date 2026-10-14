@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Aurora } from "@/components/Aurora";
@@ -11,6 +12,12 @@ import { SectionTitle } from "@/components/SectionTitle";
 import { CTA } from "@/components/CTA";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { caseStudies, company, services, stats, techGroups } from "@/lib/data";
+
+export const metadata: Metadata = {
+  // Title and description come from the root layout; only the canonical link is set here.
+  alternates: { canonical: "/" },
+  openGraph: { url: "/" },
+};
 
 export default function Home() {
   const allTech = techGroups.flatMap((g) => g.items.map((i) => i.name));

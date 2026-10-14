@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Mail, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
@@ -7,7 +8,12 @@ import { ContactForm } from "@/components/ContactForm";
 import { SocialLinks } from "@/components/SocialLinks";
 import { company } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Contact" };
+export const metadata: Metadata = pageMeta({
+  title: "Contact Us",
+  description:
+    "Talk to Prasthana about your web, mobile, data or AI project. Email info@prasthana.com or visit our office in Hitech City, Hyderabad.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

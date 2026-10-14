@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { SpotlightCard } from "@/components/SpotlightCard";
@@ -8,7 +9,12 @@ import { OfficeGallery } from "@/components/OfficeGallery";
 import { SocialLinks } from "@/components/SocialLinks";
 import { company, values } from "@/lib/data";
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = pageMeta({
+  title: "About Us",
+  description:
+    "Prasthana Software Solutions is a software application development company in Hyderabad, coding with purpose and precision for clients across healthcare, fitness, security and more.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (

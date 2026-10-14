@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { Check } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
@@ -7,10 +8,12 @@ import { SpotlightCard } from "@/components/SpotlightCard";
 import { CTA } from "@/components/CTA";
 import { engagementCompare, engagementDetails, engagementPractices, engagementPrinciples } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "How We Work",
-  description: "Engagement models and the way we run delivery: dedicated team, fixed scope and time & material.",
-};
+export const metadata: Metadata = pageMeta({
+  title: "How We Work: Engagement Models",
+  description:
+    "Dedicated team, fixed scope or time and material: compare Prasthana's engagement models and see how we run delivery, from onboarding to continuous improvement.",
+  path: "/engagement-models",
+});
 
 export default function EngagementModelsPage() {
   return (

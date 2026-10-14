@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { LegalPage, type LegalSection } from "@/components/LegalPage";
 import { company } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Privacy Policy" };
+export const metadata: Metadata = pageMeta({
+  title: "Privacy Policy",
+  description:
+    "How Prasthana collects, uses and protects personal data when you visit our website, contact us or apply for a job.",
+  path: "/privacy",
+});
 
 const sections: LegalSection[] = [
   {

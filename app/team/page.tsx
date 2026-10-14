@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { SpotlightCard } from "@/components/SpotlightCard";
@@ -6,7 +7,12 @@ import { Counter } from "@/components/Counter";
 import { CTA } from "@/components/CTA";
 import { profiles } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Reference Profiles" };
+export const metadata: Metadata = pageMeta({
+  title: "Reference Profiles",
+  description:
+    "Meet the engineers, architects, product managers and release managers who would join your team, with their experience, tech stack and projects.",
+  path: "/team",
+});
 
 export default function TeamPage() {
   return (

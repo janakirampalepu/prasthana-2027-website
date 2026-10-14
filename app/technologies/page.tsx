@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import { PageHeader } from "@/components/PageHeader";
 import { Reveal } from "@/components/Reveal";
 import { SpotlightCard } from "@/components/SpotlightCard";
 import { CTA } from "@/components/CTA";
 import { techGroups } from "@/lib/data";
 
-export const metadata: Metadata = { title: "Technologies" };
+export const metadata: Metadata = pageMeta({
+  title: "Technologies We Use",
+  description:
+    "React, Angular, Vue.js, Ruby on Rails, Node.js, .NET, SwiftUI, Jetpack Compose, React Native, Flutter, Postgres, SQL Server, MySQL and Oracle: the technology stack behind Prasthana's products.",
+  path: "/technologies",
+});
 
 export default function TechnologiesPage() {
   return (
