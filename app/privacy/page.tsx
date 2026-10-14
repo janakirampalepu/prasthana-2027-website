@@ -14,7 +14,7 @@ const sections: LegalSection[] = [
   {
     title: "Who we are",
     paragraphs: [
-      `${company.legalName} ("Prasthana", "we", "us") is a software application development company based in Hyderabad, India. This Privacy Policy explains how we handle personal data when you visit www.prasthana.com (the "Site"), contact us, or apply for a job with us.`,
+      `${company.legalName} ("Prasthana", "we", "us") is a product engineering and technology company based in Hyderabad, India. This Privacy Policy explains how we handle personal data when you visit www.prasthana.com (the "Site"), contact us, or apply for a job with us.`,
     ],
   },
   {

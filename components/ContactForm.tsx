@@ -26,7 +26,7 @@ export function ContactForm() {
         <input name="email" type="email" required placeholder="Work email" className={field} />
       </div>
       <select name="topic" className={field} defaultValue="Web Application Development">
-        {["Web Application Development", "Mobile App Development", "Quality Engineering", "Dev Ops", "Analytics", "BigData, ML & AI", "Other"].map(
+        {["Technology Consulting", "Web Application Development", "Mobile App Development", "Quality Engineering", "Dev Ops", "Analytics", "BigData, ML & AI", "Other"].map(
           (o) => <option key={o} className="bg-neutral-900">{o}</option>,
         )}
       </select>

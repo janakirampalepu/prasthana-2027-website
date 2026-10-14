@@ -8,7 +8,9 @@ export const SITE_URL = "https://www.prasthana.com";
 export const LAST_UPDATED = "2026-10-13";
 
 export const siteKeywords = [
-  "software application development company in Hyderabad",
+  "product engineering and technology company in Hyderabad",
+  "technology consulting",
+  "software development company in Hyderabad",
   "web application development",
   "mobile app development",
   "quality engineering",

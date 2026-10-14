@@ -12,7 +12,7 @@ import { company, values } from "@/lib/data";
 export const metadata: Metadata = pageMeta({
   title: "About Us",
   description:
-    "Prasthana Software Solutions is a software application development company in Hyderabad, coding with purpose and precision for clients across healthcare, fitness, security and more.",
+    "Prasthana Software Solutions is a product engineering and technology company in Hyderabad, coding with purpose and precision for clients across healthcare, fitness, security and more.",
   path: "/about",
 });
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About us"
         title="Coding with purpose and precision."
-        text={`${company.legalName} is a software application development company based in Hyderabad. ${company.description}`}
+        text={`${company.legalName} is a product engineering and technology company based in Hyderabad. ${company.description}`}
       />
       <section className="mx-auto max-w-6xl px-6 sm:px-10">
         <div className="grid gap-5 md:grid-cols-2">

@@ -12,7 +12,7 @@ import { engagementModels, services } from "@/lib/data";
 export const metadata: Metadata = pageMeta({
   title: "Software Development Services",
   description:
-    "Web application development, mobile app development, quality engineering, DevOps, analytics, and big data, machine learning and AI services from Prasthana in Hyderabad.",
+    "Technology consulting, web application development, mobile app development, quality engineering, DevOps, analytics, and big data, machine learning and AI services from Prasthana in Hyderabad.",
   path: "/services",
 });
 
@@ -22,7 +22,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="Everything you need to design, build, ship and scale."
-        text="Six connected practices so you work with one team from idea to production."
+        text="Seven connected practices so you work with one team from first idea to production."
       />
       <section className="mx-auto max-w-6xl px-6 sm:px-10">
         <div className="grid gap-5 md:grid-cols-2">

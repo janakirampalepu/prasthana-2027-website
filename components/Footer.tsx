@@ -10,7 +10,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-6xl gap-12 px-6 sm:px-10 py-16 md:grid-cols-3 lg:grid-cols-5">
         <div className="md:col-span-3 lg:col-span-2">
           <Image src="/logo-blue-bright.png" alt="Prasthana" width={140} height={40} className="h-10 w-auto" />
-          <p className="mt-3 max-w-sm text-muted">{company.tagline}. Software application development company.</p>
+          <p className="mt-3 max-w-sm text-muted">{company.tagline}. Product engineering and technology company.</p>
           <ul className="mt-6 max-w-sm space-y-3 text-sm text-muted">
             <li className="flex gap-3">
               <MapPin className="mt-0.5 size-4 shrink-0 text-accent" />

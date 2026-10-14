@@ -10,9 +10,9 @@ import { SITE_URL, orgAddress, siteKeywords } from "@/lib/seo";
 const poppins = Poppins({ variable: "--font-poppins", subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const homeTitle = "Prasthana | Software Application Development Company in Hyderabad";
+const homeTitle = "Prasthana | Product Engineering and Technology Company in Hyderabad";
 const homeDescription =
-  "Prasthana is a Hyderabad-based software application development company. We build web and mobile apps, and provide quality engineering, DevOps, analytics, data and AI services through dedicated product and engineering teams.";
+  "Prasthana is a Hyderabad-based product engineering and technology company. We build web and mobile products and provide technology consulting, quality engineering, DevOps, analytics, data and AI services through dedicated product and engineering teams.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

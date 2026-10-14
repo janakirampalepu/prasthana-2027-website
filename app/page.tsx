@@ -30,12 +30,12 @@ export default function Home() {
           <Reveal>
             <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm text-muted">
               <span className="size-2 animate-pulse rounded-full bg-emerald-400" />
-              Software application development company
+              Product engineering and technology company
             </span>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="mt-8 max-w-5xl text-5xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-7xl lg:text-8xl">
-              We engineer <RotatingWord words={["web apps", "mobile apps", "data platforms", "AI products"]} />
+              We build <RotatingWord words={["web apps", "mobile apps", "data platforms", "AI products"]} />
               <br />
               with purpose &amp; precision.
             </h1>
@@ -67,7 +67,7 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-6 sm:px-10 pt-32">
         <SectionTitle
           eyebrow="What we do"
-          title="Six practices. One team that ships."
+          title="Seven practices. One team that ships."
           text="From first screen to production scale, we cover the full journey of a digital product."
         />
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

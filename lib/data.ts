@@ -6,7 +6,7 @@ export const company = {
   legalName: "Prasthana Software Solutions Pvt Ltd",
   tagline: "Coding with Purpose & Precision",
   description:
-    "We are a software application development company that builds technology to elevate your business's user experience.",
+    "We are a product engineering and technology company that builds and advises on technology to elevate your business's user experience.",
   email: "info@prasthana.com",
   address:
     "1-98/G/38, Plot No. 37 & 38, Serenity Square, Hitech City Madhapur Road, Hyderabad, Telangana 500081",
@@ -87,6 +87,14 @@ export const services: Service[] = [
     blurb: "Data platforms, ML models and AI assistants that put your data to work.",
     points: ["Data pipelines at scale", "ML model development", "LLM apps & AI agents", "RAG & knowledge assistants"],
     accent: "from-amber-400 to-orange-500",
+  },
+  {
+    slug: "consulting",
+    title: "Technology Consulting",
+    icon: "Compass",
+    blurb: "Independent technology advice that turns ideas into a clear, buildable plan.",
+    points: ["Product & technology strategy", "Architecture & due diligence", "Modernisation & cloud roadmaps", "Engineering team & process reviews"],
+    accent: "from-indigo-400 to-violet-500",
   },
 ];
 
@@ -434,7 +442,7 @@ export const jobs: Job[] = [
 ];
 
 export const stats = [
-  { value: 10, suffix: "+", label: "Years of engineering experience" },
+  { value: 8, suffix: "+", label: "Years of engineering experience" },
   { value: 6, suffix: "", label: "Service practices" },
   { value: 20, suffix: "+", label: "Technologies mastered" },
   { value: 100, suffix: "%", label: "Commitment to quality" },
@@ -473,6 +481,30 @@ const standardProcess = [
 
 // SAMPLE content: dummy copy per service page, to be refined with real material.
 export const serviceDetails: Record<string, ServiceDetail> = {
+  consulting: {
+    headline: "Technology advice that turns ideas into a clear plan.",
+    overview:
+      "Before you build, or while you scale, our consultants help you make the right technology decisions: what to build, how to build it, and how to deliver it with confidence.",
+    offerings: [
+      { title: "Product & technology strategy", text: "Roadmaps, build-versus-buy decisions and a technology plan that supports your business goals." },
+      { title: "Architecture & due diligence", text: "Architecture reviews, scalability and security assessments, and technical due diligence." },
+      { title: "Modernisation & cloud roadmaps", text: "A practical path from legacy systems to modern, cloud-ready platforms." },
+      { title: "Engineering team & process reviews", text: "Assess delivery practices, quality and tooling, and coach teams towards better outcomes." },
+    ],
+    process: [
+      { title: "Understand", text: "Interviews and workshops to learn your goals, constraints and current state." },
+      { title: "Assess", text: "Review architecture, code, process and risk against clear criteria." },
+      { title: "Recommend", text: "A prioritised roadmap with options, effort and trade-offs." },
+      { title: "Enable", text: "Support your team, or our engineers, to put the plan into action." },
+    ],
+    tech: ["Architecture reviews", "Cloud (AWS, Azure)", "Microservices", "DevOps", "Data & analytics", "AI & machine learning"],
+    deliverables: ["Assessment report", "Target architecture", "Prioritised roadmap", "Implementation plan"],
+    faqs: [
+      { q: "Can consulting lead into a build?", a: "Yes. Many clients move from a roadmap straight into delivery with our dedicated product and engineering teams, but there is no obligation to." },
+      { q: "How long does an engagement take?", a: "A focused assessment typically takes two to four weeks, depending on scope." },
+      { q: "Do you work with existing teams?", a: "Yes. We work alongside your engineers and leaders, and tailor recommendations to how your team works." },
+    ],
+  },
   web: {
     headline: "Web platforms that are fast, scalable and a pleasure to use.",
     overview:

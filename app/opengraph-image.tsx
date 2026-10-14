@@ -25,10 +25,10 @@ export default function OpengraphImage() {
           Coding with Purpose &amp; Precision
         </div>
         <div style={{ display: "flex", fontSize: 34, color: "#b8b8d0", marginTop: 32 }}>
-          Software application development company · Hyderabad
+          Product engineering and technology company · Hyderabad
         </div>
         <div style={{ display: "flex", fontSize: 28, color: "#8b5cf6", marginTop: 36 }}>
-          Web · Mobile · Quality Engineering · DevOps · Analytics · AI
+          Consulting · Web · Mobile · Quality · DevOps · Analytics · AI
         </div>
       </div>
     ),
